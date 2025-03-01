@@ -14,6 +14,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PricingComponent } from './pricing/pricing.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
 
 
 
@@ -34,7 +37,10 @@ import { PricingComponent } from './pricing/pricing.component';
     CoursesComponent,
     CartComponent,
     CheckoutComponent,
-    LoginComponent
-  ]
+    LoginComponent,
+    BrowserModule, RouterModule.forRoot(routes)
+  ],
+  exports: [RouterModule],
+  providers: []
 })
 export class AppRoutingModule { }

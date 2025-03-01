@@ -11,12 +11,12 @@ import { CheckoutComponent } from './checkout/checkout.component';
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: '/about', component: AboutComponent},
-  {path: '/contact', component: ContactComponent},
-  {path: '/pricing', component: PricingComponent},
-  {path: '/login', component: LoginComponent},
-  {path: '/courses', component: CoursesComponent},
-  {path: '/courses', component: CartComponent},
-  {path: '/courses', component: CheckoutComponent},
-  {path: '/login', component: LoginComponent}
+  {path: 'about', component: AboutComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'pricing', component: PricingComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'courses', component: CoursesComponent},
+  {path: 'cart', component: CartComponent},
+  {path: 'checkout', component: CheckoutComponent},
+  {path: 'login', component: LoginComponent}
 ];
