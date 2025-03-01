@@ -1,0 +1,40 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './Shared/header/header.component';
+import { FooterComponent } from './Shared/footer/footer.component';
+import { ImageCardComponent } from './Shared/image-card/image-card.component';
+import { CourseCardComponent } from './Shared/course-card/course-card.component';
+import { OneLinerBannerComponent } from './Shared/one-liner-banner/one-liner-banner.component';
+import { LoginComponent } from './login/login.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { PricingComponent } from './pricing/pricing.component';
+
+
+
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule,
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    OneLinerBannerComponent,
+    ImageCardComponent,
+    CourseCardComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    PricingComponent,
+    CoursesComponent,
+    CartComponent,
+    CheckoutComponent,
+    LoginComponent
+  ]
+})
+export class AppRoutingModule { }
