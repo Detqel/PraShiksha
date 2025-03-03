@@ -1,8 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+:root{
+  --btn-primary-color: rgb(124 58 237);
+  --primary-color: #d946ef;
+}
+
 *{
   font-family: 'Poppins', sans-serif;
   background-color: white;
   margin: 0;
   padding: 0;
+}
+
+.nav-item{
+  list-style-type: none;
+  font-size: 18px;
+}
+
+.nav-link{
+  text-decoration: none;
+  margin: 0 5px 0 5px;
+}
+
+.btn-primary{
+  background-color: var(--btn-primary-color) !important;
+  border: none !important;
+  outline: none !important;
 }

@@ -1,0 +1,37 @@
+h5, h6{
+  color: gray;
+}
+
+.golden-gradient-yellow{
+  color: rgb(255, 170, 0);
+}
+
+.primary-color-violet{
+  color: var(--primary-color);
+}
+
+.arr{
+  background: transparent;
+}
+
+.testimonial-banner{
+  background-color: var(--btn-primary-color);
+  height: 7.5rem;
+  padding: 5rem;
+}
+
+.testimonial-text{
+  background: transparent;
+  text-align: center;
+  color: white;
+  margin: 0 4rem 0 4rem;
+}
+
+.testimonial-text h2{
+  background: transparent;
+  font-weight: 600;
+}
+
+.testimonial-text h4{
+  background: transparent;
+}
