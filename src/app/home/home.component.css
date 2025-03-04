@@ -10,10 +10,6 @@ h5, h6{
   color: var(--primary-color);
 }
 
-.arr{
-  background: transparent;
-}
-
 .testimonial-banner{
   background-color: var(--btn-primary-color);
   height: 7.5rem;

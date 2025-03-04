@@ -3,10 +3,11 @@ import { OneLinerBannerComponent } from "../Shared/one-liner-banner/one-liner-ba
 import { HeaderComponent } from "../Shared/header/header.component";
 import { CommonModule } from '@angular/common';
 import { CourseCardComponent } from "../Shared/course-card/course-card.component";
+import { InstructorsComponent } from "../Shared/instructors/instructors.component";
 
 @Component({
   selector: 'app-home',
-  imports: [OneLinerBannerComponent, HeaderComponent, CommonModule, CourseCardComponent],
+  imports: [OneLinerBannerComponent, HeaderComponent, CommonModule, CourseCardComponent, InstructorsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

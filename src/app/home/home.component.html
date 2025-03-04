@@ -24,9 +24,13 @@
   </div>
 </div>
 
-<div class="mt-5 text-center">
+<div class="my-5 text-center">
   <h3 class="fw-bolder">Explore Our Best Courses</h3>
   <h6>Your journey to success starts here—discover, learn, and grow with us!</h6>
 </div>
 
-<app-course-card></app-course-card>
+<div class="container d-flex flex-wrap">
+  <app-course-card *ngFor="let i of [1,2,3,4,5,6]"></app-course-card>
+</div>
+
+<app-instructors></app-instructors>

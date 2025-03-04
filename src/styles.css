@@ -3,6 +3,7 @@
 :root{
   --btn-primary-color: rgb(124 58 237);
   --primary-color: #d946ef;
+  --secondary-color: #7c3aed1a;
 }
 
 *{
@@ -15,6 +16,7 @@
 .nav-item{
   list-style-type: none;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .nav-link{
@@ -26,4 +28,18 @@
   background-color: var(--btn-primary-color) !important;
   border: none !important;
   outline: none !important;
+}
+
+.arr{
+  background: transparent;
+}
+
+.btn-secondary{
+  padding: 5px;
+  font-size: 14px;
+  color: rgb(124 58 237);
+  background-color: var(--secondary-color);
+  border: none !important;
+  outline: none !important;
+  border-radius: 5px;
 }
