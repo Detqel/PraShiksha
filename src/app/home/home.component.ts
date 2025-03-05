@@ -4,10 +4,11 @@ import { HeaderComponent } from "../Shared/header/header.component";
 import { CommonModule } from '@angular/common';
 import { CourseCardComponent } from "../Shared/course-card/course-card.component";
 import { InstructorsComponent } from "../Shared/instructors/instructors.component";
+import { FooterComponent } from "../Shared/footer/footer.component";
 
 @Component({
   selector: 'app-home',
-  imports: [OneLinerBannerComponent, HeaderComponent, CommonModule, CourseCardComponent, InstructorsComponent],
+  imports: [OneLinerBannerComponent, HeaderComponent, CommonModule, CourseCardComponent, InstructorsComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

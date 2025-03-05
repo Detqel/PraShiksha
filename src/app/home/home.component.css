@@ -1,3 +1,7 @@
+.course-cards{
+  width: 550px;
+}
+
 h5, h6{
   color: gray;
 }
@@ -30,4 +34,55 @@ h5, h6{
 
 .testimonial-text h4{
   background: transparent;
+}
+
+@media (max-width: 830px){
+  .testimonial-banner{
+    padding: 0;
+    height: 10rem;
+  }
+}
+
+@media (max-width: 500px){
+  .testimonial-banner{
+    height: fit-content;
+  }
+
+  .testimonial-text{
+    margin: 2rem 0 2rem 0;
+  }
+}
+
+@media (max-width: 600px){
+  .main-image img{
+    width: 400px;
+    height: 400px;
+  }
+
+  .course-cards{
+    width: 450px;
+  }
+}
+
+@media (max-width: 480px){
+  h5{
+    font-size: 14px;
+  }
+
+  .main-image img{
+    width: 350px;
+    height: 350px;
+  }
+
+  .course-heading p{
+    font-size: 12px;
+  }
+
+  .author-profile h5{
+    display: none;
+  }
+
+  .course-cards{
+    width: 380px;
+  }
 }
