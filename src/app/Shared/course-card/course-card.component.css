@@ -21,6 +21,7 @@
 }
 
 .btn-secondary:hover{
+  transition: .5s ease-in-out;
   background-color: var(--btn-primary-color);
   color: white;
 }

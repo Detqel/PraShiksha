@@ -5,6 +5,7 @@
   --primary-color: #d946ef;
   --secondary-color: #7c3aed1a;
   --dark-bg: rgb(15 23 42);
+  --tw-ring-offset-shadow: 0 0 #0000;
 }
 
 *{
@@ -29,6 +30,7 @@
   background-color: var(--btn-primary-color) !important;
   border: none !important;
   outline: none !important;
+  height: 2.3rem;
 }
 
 .arr{
@@ -38,7 +40,7 @@
 .btn-secondary{
   padding: 5px;
   font-size: 14px;
-  color: rgb(124 58 237);
+  color: var(--btn-primary-color);
   background-color: var(--secondary-color);
   border: none !important;
   outline: none !important;
@@ -47,4 +49,15 @@
 
 li{
   list-style: none;
+}
+
+svg{
+  background: transparent;
+  color: var(--btn-primary-color);
+}
+
+.btn-tertiary{
+  color: var(--btn-primary-color);
+  border: none;
+  outline: none;
 }
