@@ -1,52 +1,22 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { OneLinerBannerComponent } from "../Shared/one-liner-banner/one-liner-banner.component";
-import { HeaderComponent } from "../Shared/header/header.component";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CourseService } from '../../Services/course.service';
 import { CommonModule } from '@angular/common';
-import { CourseCardComponent } from "../Shared/course-card/course-card.component";
-import { InstructorsComponent } from "../Shared/instructors/instructors.component";
-import { FooterComponent } from "../Shared/footer/footer.component";
+import { HeaderComponent } from "../header/header.component";
+import { FooterComponent } from "../footer/footer.component";
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { CourseCardComponent } from "../course-card/course-card.component";
 
 @Component({
-  selector: 'app-home',
-  imports: [OneLinerBannerComponent, HeaderComponent, CommonModule, CourseCardComponent, InstructorsComponent, FooterComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  selector: 'app-single-course',
+  imports: [CommonModule, HeaderComponent, FooterComponent, CourseCardComponent],
+  templateUrl: './single-course.component.html',
+  styleUrl: './single-course.component.css'
 })
-export class HomeComponent implements AfterViewInit{
-  counters = [
-    { value: 100, label: 'Courses', currentValue: 0 },
-    { value: 12, label: 'Countries', currentValue: 0 },
-    { value: 500, label: 'Students', currentValue: 0 },
-    { value: 10, label: 'Instructors', currentValue: 0 }
-  ];
-
-  @ViewChild('testimonialBanner') banner!: ElementRef;
-
-  ngAfterViewInit() {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.startCounting();
-          observer.disconnect();
-        }
-      });
-    });
-
-    observer.observe(this.banner.nativeElement);
-  }
-
-  startCounting() {
-    this.counters.forEach(counter => {
-      let step = Math.ceil(counter.value / 50);
-      let interval = setInterval(() => {
-        counter.currentValue += step;
-        if (counter.currentValue >= counter.value) {
-          counter.currentValue = counter.value;
-          clearInterval(interval);
-        }
-      }, 30);
-    });
-  }
+export class SingleCourseComponent implements OnInit {
+  courseId: string = '';
+  courseData!: { title: string, chapter: number, duration: number, desc: string, level: string, quizes: number, author: string, url: string, Modules: string[] };
+  safeResourceURL!: SafeResourceUrl;
 
   course_detail = [
     {title: "C# Fundamentals", chapter: 10, duration: 5, desc: "Fundamentals Programming, Object Oriented Programming, Collections, .NET, Linq", level: "All", quizes: 5, author: "Kausthuban", url: "https://www.youtube.com/embed/V7BAEURmPvA?si=mls3BQ2YjKW57A3n", Modules: ["Sample Text", "Sample Text", "Sample Text"]},
@@ -56,4 +26,26 @@ export class HomeComponent implements AfterViewInit{
     {title: "C# Fundamentals", chapter: 10, duration: 5, desc: "Fundamentals Programming, Object Oriented Programming, Collections, .NET, Linq", level: "All", quizes: 5, author: "Kausthuban", url: "https://www.youtube.com/embed/V7BAEURmPvA?si=mls3BQ2YjKW57A3n", Modules: ["Sample Text", "Sample Text", "Sample Text"]},
     {title: "C# Fundamentals", chapter: 10, duration: 5, desc: "Fundamentals Programming, Object Oriented Programming, Collections, .NET, Linq", level: "All", quizes: 5, author: "Kausthuban", url: "https://www.youtube.com/embed/V7BAEURmPvA?si=mls3BQ2YjKW57A3n", Modules: ["Sample Text", "Sample Text", "Sample Text"]}
   ];
+
+  constructor(private route: ActivatedRoute, private router: Router, private courseService: CourseService, private sanitizer: DomSanitizer) {}
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.courseId = params.get('id') || '';
+      console.log('Course ID from URL:', this.courseId);
+    });
+
+    this.courseData = this.courseService.getCurrentCourse();
+
+    if (!this.courseData) {
+      console.warn('No course data found in service!');
+    } else {
+      this.safeResourceURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.courseData.url+'/');
+      console.log('Received course from service:', this.courseData);
+    }
+  }
+
+  navigateToCart(){
+    this.router.navigate(['/cart']);
+  }
 }

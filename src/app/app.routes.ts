@@ -8,6 +8,9 @@ import { PricingComponent } from './pricing/pricing.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { SingleCourseComponent } from './Shared/single-course/single-course.component';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,5 +21,8 @@ export const routes: Routes = [
   {path: 'courses', component: CoursesComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'course/:id', component: SingleCourseComponent},
+  {path: 'maintenance', component: MaintenanceComponent},
+  {path: '404', component: NotFoundComponent}
 ];
