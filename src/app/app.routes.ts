@@ -24,5 +24,5 @@ export const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'course/:id', component: SingleCourseComponent},
   {path: 'maintenance', component: MaintenanceComponent},
-  {path: '404', component: NotFoundComponent}
+  {path: '**', component: NotFoundComponent}
 ];

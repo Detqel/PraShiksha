@@ -17,7 +17,8 @@ import { PricingComponent } from './pricing/pricing.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { routes } from './app.routes';
     CartComponent,
     CheckoutComponent,
     LoginComponent,
-    BrowserModule, RouterModule.forRoot(routes)
+    BrowserModule, RouterModule.forRoot(routes),
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   exports: [RouterModule],
   providers: []
